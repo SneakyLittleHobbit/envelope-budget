@@ -1,0 +1,34 @@
+'use client'
+
+import { BottomTabBar } from '@/components/bottom-tab-bar'
+import { ErrorBoundary } from '@/components/error-boundary'
+import { useStoreHydration } from '@/lib/use-store-hydration'
+
+export default function AppShellLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
+  const hydrated = useStoreHydration()
+
+  if (!hydrated) {
+    return (
+      <div className="flex flex-col h-dvh max-w-md mx-auto bg-budget-bg">
+        <div className="flex-1 flex items-center justify-center">
+          <div className="w-6 h-6 border-2 border-budget-green border-t-transparent rounded-full animate-spin" />
+        </div>
+      </div>
+    )
+  }
+
+  return (
+    <div className="flex flex-col h-dvh max-w-md mx-auto bg-budget-bg">
+      <ErrorBoundary>
+        <div className="flex-1 flex flex-col overflow-hidden">
+          {children}
+        </div>
+      </ErrorBoundary>
+      <BottomTabBar />
+    </div>
+  )
+}

@@ -1,0 +1,116 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+/* Budget App — always-dark theme */
+:root {
+  /* Core backgrounds */
+  --bg-primary: #0D1310;
+  --bg-card: #1C2B22;
+  --bg-section-header: #162318;
+
+  /* Header & accent */
+  --green-header: #2D6A4F;
+  --green-accent: #3CB371;
+  --green-pill: #3CB371;
+
+  /* Alert */
+  --red-alert: #E53935;
+  --red-delete: #FF3B30;
+
+  /* Text */
+  --text-primary: #FFFFFF;
+  --text-secondary: #8A9E8F;
+  --text-positive: #3CB371;
+  --text-negative: #E53935;
+
+  /* Selection / links */
+  --blue-select: #2979FF;
+
+  /* Dividers */
+  --divider: #2A3D30;
+
+  /* Map to shadcn tokens for compatibility */
+  --background: var(--bg-primary);
+  --foreground: var(--text-primary);
+  --card: var(--bg-card);
+  --card-foreground: var(--text-primary);
+  --popover: var(--bg-card);
+  --popover-foreground: var(--text-primary);
+  --primary: var(--green-accent);
+  --primary-foreground: #FFFFFF;
+  --secondary: var(--bg-section-header);
+  --secondary-foreground: var(--text-secondary);
+  --muted: var(--bg-section-header);
+  --muted-foreground: var(--text-secondary);
+  --accent: var(--bg-card);
+  --accent-foreground: var(--text-primary);
+  --destructive: var(--red-alert);
+  --destructive-foreground: #FFFFFF;
+  --border: var(--divider);
+  --input: var(--bg-card);
+  --ring: var(--green-accent);
+  --radius: 0.5rem;
+}
+
+@theme inline {
+  --font-sans: 'Geist', 'Geist Fallback', system-ui, sans-serif;
+  --font-mono: 'Geist Mono', 'Geist Mono Fallback', monospace;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  /* Custom budget-app color tokens */
+  --color-budget-bg: var(--bg-primary);
+  --color-budget-card: var(--bg-card);
+  --color-budget-section: var(--bg-section-header);
+  --color-budget-header: var(--green-header);
+  --color-budget-green: var(--green-accent);
+  --color-budget-red: var(--red-alert);
+  --color-budget-red-delete: var(--red-delete);
+  --color-budget-text: var(--text-primary);
+  --color-budget-text-secondary: var(--text-secondary);
+  --color-budget-positive: var(--text-positive);
+  --color-budget-negative: var(--text-negative);
+  --color-budget-blue: var(--blue-select);
+  --color-budget-divider: var(--divider);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-budget-bg text-budget-text;
+  }
+}
+
+/* Utility: hide scrollbar but keep scroll functionality */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

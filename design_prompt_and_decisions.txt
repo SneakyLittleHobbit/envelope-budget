@@ -1,0 +1,30 @@
+Attached find a layout document of a budgeting web-app I want to build in React and host on my local network for home users to utilize via their phone browsers (i.e. design should be mobile forward)
+
+Plan the build, codebase, and fill any "inferred" sections with a concrete implementation plan that ties in with the rest of the app flow / feel.
+
+Visuals can be basic. I will perform a visual theme overhaul afterwards based off some other assets and inspirational content I have.
+
+TASK ORDER:
+
+First and most importantly:
+Ref. @/LAYOUT_ARCHITECTURE.md
+
+THEN
+
+Plan the build and tech-stack in detail.
+
+Also attached some omages of the app I used for inspiration. If we can mimic these quite closely for the respective screens. The image titles are their descriptions.
+
+Finally here are some clarifying points on the design not properly covered in the layout doc:
+
+#	Decision
+1.	Data Persistence: Single shared household data (all users see same data)
+2a.	Group header tap: No action
+2b.	Split Transaction: Defer to v2
+2c.	FAB: Header icons only
+3.	PWA: No
+4.	Currency/Locale: SA (South Arican Rand) format only
+5.	Reports/More tabs: Stubs with very minimal features for now
+6.	Build Tooling: Next.js
+
+Please let me know if you have any more key questions.
