@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { Search, Pencil, PlusCircle, CheckCircle } from 'lucide-react'
+import { Search, Plus, PlusCircle, CheckCircle } from 'lucide-react'
 import { useBudgetStore } from '@/lib/store'
 import {
   getTransactionsGroupedByDate,
@@ -35,7 +35,7 @@ export default function TransactionsPage() {
         left={
           <Link
             href="/transactions/search"
-            className="text-budget-text touch-manipulation"
+            className="text-budget-text-secondary touch-manipulation"
             aria-label="Search transactions"
           >
             <Search className="h-5 w-5" />
@@ -45,10 +45,10 @@ export default function TransactionsPage() {
         right={
           <Link
             href="/transactions/add"
-            className="text-budget-text touch-manipulation"
+            className="text-budget-amber touch-manipulation"
             aria-label="Add transaction"
           >
-            <Pencil className="h-5 w-5" />
+            <Plus className="h-5 w-5" />
           </Link>
         }
       />
@@ -57,8 +57,8 @@ export default function TransactionsPage() {
         {/* Upcoming section */}
         {upcoming.length > 0 && (
           <div>
-            <div className="px-4 py-2 bg-budget-section">
-              <span className="text-budget-text font-semibold text-sm">
+            <div className="px-4 py-2.5 bg-budget-section border-b border-budget-divider/50">
+              <span className="text-budget-text font-serif font-semibold text-sm">
                 Upcoming
               </span>
             </div>

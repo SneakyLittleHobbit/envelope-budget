@@ -3,43 +3,53 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* Budget App — always-dark theme */
-:root {
-  /* Core backgrounds */
-  --bg-primary: #0D1310;
-  --bg-card: #1C2B22;
-  --bg-section-header: #162318;
+/* ============================================
+   Envelope Budget — Botanical Forest Theme
+   Inspired by: deep forest greens, olive tones,
+   warm amber/gold accents, and soft cream.
+   ============================================ */
 
-  /* Header & accent */
-  --green-header: #2D6A4F;
-  --green-accent: #3CB371;
-  --green-pill: #3CB371;
+:root {
+  /* Core backgrounds — deep forest with warmth */
+  --bg-primary: #0B110E;
+  --bg-card: #16231A;
+  --bg-card-elevated: #1D2E22;
+  --bg-section-header: #121D16;
+
+  /* Header & accent — rich olive/forest */
+  --green-header: #2A4A35;
+  --green-accent: #8DB580;
+  --green-pill: #8DB580;
+
+  /* Warm amber accent for highlights */
+  --amber-accent: #C9A84C;
+  --amber-glow: #D4B863;
 
   /* Alert */
-  --red-alert: #E53935;
-  --red-delete: #FF3B30;
+  --red-alert: #C4564A;
+  --red-delete: #D45B4F;
 
-  /* Text */
-  --text-primary: #FFFFFF;
-  --text-secondary: #8A9E8F;
-  --text-positive: #3CB371;
-  --text-negative: #E53935;
+  /* Text — cream/warm tones instead of pure white */
+  --text-primary: #EDE8DB;
+  --text-secondary: #8A9A84;
+  --text-positive: #8DB580;
+  --text-negative: #C4564A;
 
   /* Selection / links */
-  --blue-select: #2979FF;
+  --blue-select: #7BA68D;
 
-  /* Dividers */
-  --divider: #2A3D30;
+  /* Dividers — subtle forest */
+  --divider: #243028;
 
   /* Map to shadcn tokens for compatibility */
   --background: var(--bg-primary);
   --foreground: var(--text-primary);
   --card: var(--bg-card);
   --card-foreground: var(--text-primary);
-  --popover: var(--bg-card);
+  --popover: var(--bg-card-elevated);
   --popover-foreground: var(--text-primary);
   --primary: var(--green-accent);
-  --primary-foreground: #FFFFFF;
+  --primary-foreground: #0B110E;
   --secondary: var(--bg-section-header);
   --secondary-foreground: var(--text-secondary);
   --muted: var(--bg-section-header);
@@ -47,15 +57,16 @@
   --accent: var(--bg-card);
   --accent-foreground: var(--text-primary);
   --destructive: var(--red-alert);
-  --destructive-foreground: #FFFFFF;
+  --destructive-foreground: #EDE8DB;
   --border: var(--divider);
   --input: var(--bg-card);
   --ring: var(--green-accent);
-  --radius: 0.5rem;
+  --radius: 0.75rem;
 }
 
 @theme inline {
   --font-sans: 'Geist', 'Geist Fallback', system-ui, sans-serif;
+  --font-serif: 'Playfair Display', 'Georgia', serif;
   --font-mono: 'Geist Mono', 'Geist Mono Fallback', monospace;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -84,9 +95,12 @@
   /* Custom budget-app color tokens */
   --color-budget-bg: var(--bg-primary);
   --color-budget-card: var(--bg-card);
+  --color-budget-card-elevated: var(--bg-card-elevated);
   --color-budget-section: var(--bg-section-header);
   --color-budget-header: var(--green-header);
   --color-budget-green: var(--green-accent);
+  --color-budget-amber: var(--amber-accent);
+  --color-budget-amber-glow: var(--amber-glow);
   --color-budget-red: var(--red-alert);
   --color-budget-red-delete: var(--red-delete);
   --color-budget-text: var(--text-primary);
@@ -113,4 +127,50 @@
 .no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+/* Botanical background overlay utilities */
+.bg-botanical {
+  position: relative;
+}
+.bg-botanical::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('/images/botanical-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.06;
+  pointer-events: none;
+  z-index: 0;
+}
+.bg-botanical > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Subtle leaf pattern for headers */
+.bg-header-botanical {
+  position: relative;
+  overflow: hidden;
+}
+.bg-header-botanical::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('/images/botanical-header.jpg');
+  background-size: cover;
+  background-position: center top;
+  opacity: 0.12;
+  pointer-events: none;
+}
+
+/* Warm glow effect for cards */
+.card-glow {
+  box-shadow: 0 0 20px rgba(201, 168, 76, 0.04), 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Divider with botanical feel */
+.divider-botanical {
+  border-color: rgba(141, 181, 128, 0.12);
 }

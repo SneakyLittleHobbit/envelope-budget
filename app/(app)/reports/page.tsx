@@ -88,19 +88,19 @@ export default function ReportsPage() {
       <AppHeader center="Reports" />
       <div className="flex-1 overflow-y-auto no-scrollbar">
         {/* Month Header */}
-        <div className="px-4 py-3 bg-budget-section">
-          <h2 className="text-budget-text font-medium">{displayMonth}</h2>
+        <div className="px-4 py-3 bg-budget-section border-b border-budget-divider/50">
+          <h2 className="text-budget-text font-serif font-medium">{displayMonth}</h2>
         </div>
 
         {/* Summary Cards */}
         <div className="grid grid-cols-2 gap-3 p-4">
-          <div className="bg-budget-card rounded-xl p-4">
+          <div className="bg-budget-card rounded-xl p-4 card-glow border border-budget-divider/30">
             <p className="text-budget-text-secondary text-xs uppercase tracking-wide">Income</p>
             <p className="text-budget-positive text-xl font-semibold mt-1">
               {formatZAR(reportData.totalIncome)}
             </p>
           </div>
-          <div className="bg-budget-card rounded-xl p-4">
+          <div className="bg-budget-card rounded-xl p-4 card-glow border border-budget-divider/30">
             <p className="text-budget-text-secondary text-xs uppercase tracking-wide">Expenses</p>
             <p className="text-budget-red text-xl font-semibold mt-1">
               {formatZAR(reportData.totalExpenses)}
@@ -110,7 +110,7 @@ export default function ReportsPage() {
 
         {/* Net Income */}
         <div className="px-4 pb-4">
-          <div className="bg-budget-card rounded-xl p-4">
+          <div className="bg-budget-card rounded-xl p-4 card-glow border border-budget-divider/30">
             <p className="text-budget-text-secondary text-xs uppercase tracking-wide">Net Income</p>
             <p className={`text-xl font-semibold mt-1 ${reportData.totalIncome - reportData.totalExpenses >= 0 ? 'text-budget-positive' : 'text-budget-red'}`}>
               {formatZAR(reportData.totalIncome - reportData.totalExpenses)}
@@ -119,8 +119,8 @@ export default function ReportsPage() {
         </div>
 
         {/* Account Summary */}
-        <div className="px-4 py-2 bg-budget-section">
-          <span className="text-budget-text-secondary text-xs uppercase tracking-wide">Account Summary</span>
+        <div className="px-4 py-2.5 bg-budget-section border-b border-budget-divider/50">
+          <span className="text-budget-text-secondary text-xs uppercase tracking-wide font-serif">Account Summary</span>
         </div>
         <div className="px-4 py-3 border-b border-budget-divider">
           <div className="flex justify-between">
@@ -140,8 +140,8 @@ export default function ReportsPage() {
         </div>
 
         {/* Spending by Envelope */}
-        <div className="px-4 py-2 bg-budget-section mt-2">
-          <span className="text-budget-text-secondary text-xs uppercase tracking-wide">Spending by Envelope</span>
+        <div className="px-4 py-2.5 bg-budget-section mt-2 border-b border-budget-divider/50">
+          <span className="text-budget-text-secondary text-xs uppercase tracking-wide font-serif">Spending by Envelope</span>
         </div>
 
         {reportData.envelopeSpending.length === 0 ? (
@@ -175,8 +175,8 @@ export default function ReportsPage() {
         )}
 
         {/* Envelope Balances */}
-        <div className="px-4 py-2 bg-budget-section mt-2">
-          <span className="text-budget-text-secondary text-xs uppercase tracking-wide">Envelope Balances</span>
+        <div className="px-4 py-2.5 bg-budget-section mt-2 border-b border-budget-divider/50">
+          <span className="text-budget-text-secondary text-xs uppercase tracking-wide font-serif">Envelope Balances</span>
         </div>
 
         {grouped.map(({ group, envelopes: groupEnvs }) => (

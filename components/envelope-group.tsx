@@ -20,9 +20,9 @@ export function EnvelopeGroup({
   return (
     <div>
       {/* Group header */}
-      <div className="flex items-baseline justify-between px-4 py-2.5">
-        <span className="text-budget-text font-bold text-lg">{groupName}</span>
-        <span className="text-budget-text font-bold text-lg tabular-nums">
+      <div className="flex items-baseline justify-between px-4 py-2.5 border-b border-budget-divider/50 bg-budget-section/60">
+        <span className="text-budget-text font-serif font-bold text-lg">{groupName}</span>
+        <span className="text-budget-amber font-bold text-lg tabular-nums">
           {formatZAR(groupTotal)}
         </span>
       </div>

@@ -2,12 +2,13 @@
 
 import { useMemo } from 'react'
 import Link from 'next/link'
-import { Pencil } from 'lucide-react'
+import { Plus } from 'lucide-react'
 import { useBudgetStore } from '@/lib/store'
 import { getGroupedEnvelopes } from '@/lib/computed'
 import { formatZAR } from '@/lib/format'
 import { AppHeader } from '@/components/app-header'
 import { EnvelopeGroup } from '@/components/envelope-group'
+import { LeafDivider } from '@/components/leaf-divider'
 import { useEnvelopeBalances } from '@/hooks/use-envelope-balances'
 
 export default function EnvelopesPage() {
@@ -49,10 +50,10 @@ export default function EnvelopesPage() {
         right={
           <Link
             href="/envelopes/add"
-            className="text-budget-text touch-manipulation"
+            className="text-budget-amber touch-manipulation"
             aria-label="Add envelope"
           >
-            <Pencil className="h-5 w-5" />
+            <Plus className="h-5 w-5" />
           </Link>
         }
       />
@@ -81,9 +82,10 @@ export default function EnvelopesPage() {
         })}
 
         {/* Available row */}
-        <div className="flex items-baseline justify-between px-4 py-3 mt-2">
-          <span className="text-budget-text font-bold text-lg">Available</span>
-          <span className="text-budget-text font-bold text-lg tabular-nums">
+        <LeafDivider />
+        <div className="flex items-baseline justify-between px-4 py-4 mt-2 border-t border-budget-divider">
+          <span className="text-budget-text font-serif font-bold text-lg">Available</span>
+          <span className="text-budget-amber font-bold text-lg tabular-nums">
             {formatZAR(available)}
           </span>
         </div>

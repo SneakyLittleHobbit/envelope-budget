@@ -3,7 +3,7 @@
 import { use } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
-import { ChevronLeft, Pencil, Mail } from 'lucide-react'
+import { ChevronLeft, Pencil, Leaf } from 'lucide-react'
 import { useBudgetStore } from '@/lib/store'
 import { getEnvelopeBalance, getTransactionsGroupedByDate } from '@/lib/computed'
 import { formatZAR } from '@/lib/format'
@@ -79,14 +79,14 @@ export default function EnvelopeDetailPage({
 
       <div className="flex-1 overflow-y-auto no-scrollbar">
         {/* Summary card */}
-        <div className="px-4 py-4 bg-budget-card mx-3 mt-3 rounded-lg">
+        <div className="px-4 py-4 bg-budget-card mx-3 mt-3 rounded-xl card-glow border border-budget-divider/30">
           <div className="flex items-start gap-3">
-            <div className="w-10 h-10 rounded-lg bg-budget-header flex items-center justify-center shrink-0">
-              <Mail className="h-5 w-5 text-budget-text" />
+            <div className="w-10 h-10 rounded-xl bg-budget-card-elevated flex items-center justify-center shrink-0 border border-budget-divider/30">
+              <Leaf className="h-5 w-5 text-budget-green" strokeWidth={1.5} />
             </div>
             <div className="flex-1">
               <div className="flex items-baseline justify-between">
-                <span className="text-budget-text font-semibold text-lg">
+                <span className="text-budget-text font-serif font-semibold text-lg">
                   {envelope.name}
                 </span>
                 <span

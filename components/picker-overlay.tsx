@@ -22,22 +22,22 @@ export function PickerOverlay({
 }: PickerOverlayProps) {
   return (
     <div className="fixed inset-0 z-50 bg-budget-bg flex flex-col max-w-md mx-auto">
-      <header className="flex items-center justify-between bg-budget-header px-4 py-3 min-h-[52px] shrink-0">
-        <button onClick={onClose} className="text-budget-text touch-manipulation min-w-[60px]">
+      <header className="relative flex items-center justify-between bg-budget-header px-4 py-3 min-h-[56px] shrink-0 border-b border-budget-divider bg-header-botanical">
+        <button onClick={onClose} className="relative z-10 text-budget-text touch-manipulation min-w-[60px]">
           {useX ? (
             <X className="h-5 w-5" />
           ) : (
             <ChevronLeft className="h-6 w-6" />
           )}
         </button>
-        <span className="text-budget-text font-semibold text-lg flex-1 text-center">
+        <span className="relative z-10 text-budget-text font-serif font-semibold text-lg flex-1 text-center tracking-wide">
           {title}
         </span>
-        <div className="min-w-[60px] flex justify-end">
+        <div className="relative z-10 min-w-[60px] flex justify-end">
           {onSave && (
             <button
               onClick={onSave}
-              className="bg-budget-green text-white text-sm font-semibold px-4 py-1.5 rounded-full touch-manipulation"
+              className="bg-budget-green text-budget-bg text-sm font-semibold px-4 py-1.5 rounded-full touch-manipulation"
             >
               Save
             </button>

@@ -3,26 +3,26 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import {
-  Mail,
-  List,
+  Wallet,
+  ArrowLeftRight,
   Landmark,
-  Clock,
-  MoreHorizontal,
+  BarChart3,
+  Settings,
 } from 'lucide-react'
 
 const tabs = [
-  { href: '/envelopes', label: 'Envelopes', icon: Mail },
-  { href: '/transactions', label: 'Transactions', icon: List },
+  { href: '/envelopes', label: 'Envelopes', icon: Wallet },
+  { href: '/transactions', label: 'Transactions', icon: ArrowLeftRight },
   { href: '/accounts', label: 'Accounts', icon: Landmark },
-  { href: '/reports', label: 'Reports', icon: Clock },
-  { href: '/more', label: 'More', icon: MoreHorizontal },
+  { href: '/reports', label: 'Reports', icon: BarChart3 },
+  { href: '/more', label: 'More', icon: Settings },
 ]
 
 export function BottomTabBar() {
   const pathname = usePathname()
 
   return (
-    <nav className="flex items-center justify-around bg-budget-bg border-t border-budget-divider pb-[env(safe-area-inset-bottom)] shrink-0">
+    <nav className="flex items-center justify-around bg-budget-bg/95 backdrop-blur-sm border-t border-budget-divider pb-[env(safe-area-inset-bottom)] shrink-0">
       {tabs.map((tab) => {
         const isActive =
           pathname === tab.href || pathname.startsWith(tab.href + '/')
@@ -31,12 +31,15 @@ export function BottomTabBar() {
           <Link
             key={tab.href}
             href={tab.href}
-            className={`flex flex-col items-center gap-0.5 py-2 px-3 min-w-[64px] touch-manipulation ${
-              isActive ? 'text-budget-green' : 'text-budget-text-secondary'
+            className={`flex flex-col items-center gap-0.5 py-2.5 px-3 min-w-[64px] touch-manipulation transition-colors ${
+              isActive ? 'text-budget-amber' : 'text-budget-text-secondary'
             }`}
           >
-            <Icon className="h-5 w-5" />
+            <Icon className="h-5 w-5" strokeWidth={isActive ? 2 : 1.5} />
             <span className="text-[10px] font-medium">{tab.label}</span>
+            {isActive && (
+              <div className="absolute bottom-[env(safe-area-inset-bottom)] h-0.5 w-8 bg-budget-amber rounded-full" />
+            )}
           </Link>
         )
       })}

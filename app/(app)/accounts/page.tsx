@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { Pencil, GripVertical, MinusCircle } from 'lucide-react'
+import { Plus, GripVertical, MinusCircle } from 'lucide-react'
 import { useBudgetStore } from '@/lib/store'
 import { getOnBudgetAccountTotal, getDebtAccountTotal } from '@/lib/computed'
 import { formatZAR } from '@/lib/format'
@@ -53,10 +53,10 @@ export default function AccountsPage() {
         right={
           <Link
             href="/accounts/add"
-            className="text-budget-text touch-manipulation"
+            className="text-budget-amber touch-manipulation"
             aria-label="Add account"
           >
-            <Pencil className="h-5 w-5" />
+            <Plus className="h-5 w-5" />
           </Link>
         }
       />
@@ -70,8 +70,8 @@ export default function AccountsPage() {
         </div>
 
         {/* Checking, Savings, Cash section */}
-        <div className="flex items-baseline justify-between px-4 py-2 bg-budget-section">
-          <span className="text-budget-text-secondary text-sm font-medium">
+        <div className="flex items-baseline justify-between px-4 py-2.5 bg-budget-section border-b border-budget-divider/50">
+          <span className="text-budget-text-secondary text-sm font-serif font-medium">
             Checking, Savings, Cash
           </span>
           <span className="text-budget-text-secondary text-sm tabular-nums">
@@ -118,8 +118,8 @@ export default function AccountsPage() {
         ))}
 
         {/* Debt section */}
-        <div className="flex items-baseline justify-between px-4 py-2 bg-budget-section mt-2">
-          <span className="text-budget-text-secondary text-sm font-medium">
+        <div className="flex items-baseline justify-between px-4 py-2.5 bg-budget-section mt-2 border-b border-budget-divider/50">
+          <span className="text-budget-text-secondary text-sm font-serif font-medium">
             Debt
           </span>
           <span className="text-budget-text-secondary text-sm tabular-nums">

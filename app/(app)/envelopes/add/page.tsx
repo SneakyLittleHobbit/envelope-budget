@@ -65,7 +65,7 @@ export default function AddEnvelopePage() {
             disabled={!canSave}
             className={`text-sm font-semibold px-4 py-1.5 rounded-full touch-manipulation ${
               canSave
-                ? 'bg-budget-green text-white'
+                ? 'bg-budget-green text-budget-bg'
                 : 'bg-budget-card text-budget-text-secondary'
             }`}
           >

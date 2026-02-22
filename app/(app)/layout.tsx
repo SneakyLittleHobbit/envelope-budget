@@ -15,14 +15,17 @@ export default function AppShellLayout({
     return (
       <div className="flex flex-col h-dvh max-w-md mx-auto bg-budget-bg">
         <div className="flex-1 flex items-center justify-center">
-          <div className="w-6 h-6 border-2 border-budget-green border-t-transparent rounded-full animate-spin" />
+          <div className="flex flex-col items-center gap-3">
+            <div className="w-8 h-8 border-2 border-budget-green border-t-transparent rounded-full animate-spin" />
+            <span className="text-budget-text-secondary text-xs font-serif tracking-wide">Loading...</span>
+          </div>
         </div>
       </div>
     )
   }
 
   return (
-    <div className="flex flex-col h-dvh max-w-md mx-auto bg-budget-bg">
+    <div className="flex flex-col h-dvh max-w-md mx-auto bg-budget-bg bg-botanical">
       <ErrorBoundary>
         <div className="flex-1 flex flex-col overflow-hidden">
           {children}

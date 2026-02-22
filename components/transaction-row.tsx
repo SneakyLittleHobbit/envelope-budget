@@ -104,7 +104,7 @@ export function TransactionRow({
   return (
     <Link
       href={editHref}
-      className="flex items-start justify-between px-4 py-2.5 touch-manipulation active:bg-budget-card/50"
+      className="flex items-start justify-between px-4 py-3 touch-manipulation active:bg-budget-card/60 border-b border-budget-divider/30 transition-colors"
     >
       <div className="flex-1 min-w-0">
         <p className="text-budget-text text-[15px] truncate">{displayName}</p>

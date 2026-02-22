@@ -110,7 +110,7 @@ export default function EditIncomePage({
         left={<button onClick={() => router.back()} className="text-budget-text touch-manipulation" aria-label="Cancel"><X className="h-5 w-5" /></button>}
         center="Edit Income"
         right={
-          <button onClick={handleSave} disabled={!canSave} className={`text-sm font-semibold px-4 py-1.5 rounded-full touch-manipulation ${canSave ? 'bg-budget-green text-white' : 'bg-budget-card text-budget-text-secondary'}`}>
+          <button onClick={handleSave} disabled={!canSave} className={`text-sm font-semibold px-4 py-1.5 rounded-full touch-manipulation ${canSave ? 'bg-budget-green text-budget-bg' : 'bg-budget-card text-budget-text-secondary'}`}>
             Save
           </button>
         }

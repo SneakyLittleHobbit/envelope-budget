@@ -188,7 +188,7 @@ export default function AddTransactionPage() {
             onClick={handleSave}
             disabled={!saveable}
             className={`text-sm font-semibold px-4 py-1.5 rounded-full touch-manipulation ${
-              saveable ? 'bg-budget-green text-white' : 'bg-budget-card text-budget-text-secondary'
+              saveable ? 'bg-budget-green text-budget-bg' : 'bg-budget-card text-budget-text-secondary'
             }`}
           >
             Save
