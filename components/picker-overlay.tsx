@@ -21,8 +21,8 @@ export function PickerOverlay({
   children,
 }: PickerOverlayProps) {
   return (
-    <div className="fixed inset-0 z-50 bg-budget-bg flex flex-col max-w-md mx-auto">
-      <header className="relative flex items-center justify-between bg-budget-header px-4 py-3 min-h-[56px] shrink-0 border-b border-budget-divider bg-header-botanical">
+    <div className="fixed inset-0 z-50 bg-budget-bg flex flex-col max-w-md mx-auto bg-nature-blur">
+      <header className="relative flex items-center justify-between bg-budget-header px-4 py-3 min-h-[56px] shrink-0 border-b border-budget-divider bg-header-botanical backdrop-blur-sm">
         <button onClick={onClose} className="relative z-10 text-budget-text touch-manipulation min-w-[60px]">
           {useX ? (
             <X className="h-5 w-5" />

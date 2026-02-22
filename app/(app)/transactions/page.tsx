@@ -53,7 +53,7 @@ export default function TransactionsPage() {
         }
       />
 
-      <div className="flex-1 overflow-y-auto no-scrollbar">
+      <div className="flex-1 overflow-y-auto no-scrollbar bg-botanical-light">
         {/* Upcoming section */}
         {upcoming.length > 0 && (
           <div>

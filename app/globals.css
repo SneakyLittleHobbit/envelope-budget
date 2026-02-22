@@ -137,14 +137,75 @@
   content: '';
   position: absolute;
   inset: 0;
-  background-image: url('/images/botanical-bg.jpg');
+  background-image: url('/images/botanical-dark-leaves.jpg');
   background-size: cover;
   background-position: center;
-  opacity: 0.06;
+  opacity: 0.08;
   pointer-events: none;
   z-index: 0;
 }
 .bg-botanical > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Light botanical frame background - for lighter pages */
+.bg-botanical-light {
+  position: relative;
+}
+.bg-botanical-light::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('/images/botanical-light-frame.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.05;
+  pointer-events: none;
+  z-index: 0;
+}
+.bg-botanical-light > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Wildflower meadow background - for reports/special sections */
+.bg-wildflower {
+  position: relative;
+}
+.bg-wildflower::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('/images/wildflower-meadow.jpg');
+  background-size: cover;
+  background-position: center bottom;
+  opacity: 0.06;
+  pointer-events: none;
+  z-index: 0;
+}
+.bg-wildflower > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Nature photo blur - for modals/overlays */
+.bg-nature-blur {
+  position: relative;
+}
+.bg-nature-blur::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('/images/nature-vials.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.04;
+  filter: blur(8px);
+  pointer-events: none;
+  z-index: 0;
+}
+.bg-nature-blur > * {
   position: relative;
   z-index: 1;
 }
@@ -158,10 +219,10 @@
   content: '';
   position: absolute;
   inset: 0;
-  background-image: url('/images/botanical-header.jpg');
+  background-image: url('/images/botanical-light-frame.jpg');
   background-size: cover;
   background-position: center top;
-  opacity: 0.12;
+  opacity: 0.08;
   pointer-events: none;
 }
 

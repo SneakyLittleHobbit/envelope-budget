@@ -86,7 +86,7 @@ export default function ReportsPage() {
   return (
     <>
       <AppHeader center="Reports" />
-      <div className="flex-1 overflow-y-auto no-scrollbar">
+      <div className="flex-1 overflow-y-auto no-scrollbar bg-wildflower">
         {/* Month Header */}
         <div className="px-4 py-3 bg-budget-section border-b border-budget-divider/50">
           <h2 className="text-budget-text font-serif font-medium">{displayMonth}</h2>
